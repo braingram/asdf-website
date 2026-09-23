@@ -31,12 +31,20 @@ clean:
 livehtml: ## Serve Sphinx documentation on localhost:8000, with live-reload
 	sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+.PHONY: validate-mkdocs-content
+validate-mkdocs-content: ## Run repository-side MkDocs content checks that do not require Python
+	./scripts/validate-mkdocs-content.sh
+
 .PHONY: mkdocs-build
-mkdocs-build: ## Build the MkDocs site
+mkdocs-build: validate-mkdocs-content ## Build the MkDocs site
 	$(MKDOCS) build --config-file $(MKDOCSCONFIG)
 
+.PHONY: mkdocs-build-strict
+mkdocs-build-strict: validate-mkdocs-content ## Build the MkDocs site with strict warning handling
+	$(MKDOCS) build --strict --config-file $(MKDOCSCONFIG)
+
 .PHONY: mkdocs-serve
-mkdocs-serve: ## Serve the MkDocs site locally with live reload
+mkdocs-serve: validate-mkdocs-content ## Serve the MkDocs site locally with live reload
 	$(MKDOCS) serve --config-file $(MKDOCSCONFIG)
 
 .PHONY: mkdocs-clean

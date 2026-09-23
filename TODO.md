@@ -1,6 +1,6 @@
 # TODO: Migrate `asdf_website` from Sphinx to MkDocs
 
-Status: in progress. The MkDocs scaffold, initial theme override, external reference macro layer, and first-pass Markdown migration have been added. The original Sphinx source remains in place for comparison and cleanup later.
+Status: in progress. The MkDocs scaffold, initial theme override, external reference macro layer, first-pass Markdown migration, and repository-side validation/cleanup-prep tooling have been added. The original Sphinx source remains in place for comparison and cleanup later.
 
 ## Goal
 
@@ -522,17 +522,17 @@ Example LLM prompt:
 ---
 
 ## Phase 7 — Update project configuration and developer workflow
-- [ ] Update `pyproject.toml` dependencies from Sphinx-first to MkDocs-first.
-- [ ] Add the necessary MkDocs packages, likely including:
+- [ ] Update `pyproject.toml` dependencies from Sphinx-first to MkDocs-first. (Partially done: MkDocs dependencies added, Sphinx dependencies intentionally retained pending cleanup acceptance.)
+- [x] Add the necessary MkDocs packages, likely including:
   - `mkdocs`
   - `mkdocs-material`
   - any chosen macro/plugin package(s)
-- [ ] Update `.readthedocs.yaml` from Sphinx to MkDocs while preserving local + RTD support.
-- [ ] Update `Makefile` targets for:
+- [x] Update `.readthedocs.yaml` from Sphinx to MkDocs while preserving local + RTD support.
+- [x] Update `Makefile` targets for:
   - local build
   - local serve/live reload
   - clean
-- [ ] Keep local development simple and documented.
+- [x] Keep local development simple and documented.
 
 Example LLM prompt:
 > Replace the Sphinx build workflow with a MkDocs workflow in `pyproject.toml`, `.readthedocs.yaml`, and `Makefile`, while keeping both local development and Read the Docs builds working.

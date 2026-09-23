@@ -3,26 +3,29 @@ site_description: The ASDF Website
 site_url: https://www.asdf-format.org
 repo_url: https://github.com/asdf-format/asdf-website
 repo_name: asdf-format/asdf-website
+strict: true
+use_directory_urls: false
 
 docs_dir: docs
 site_dir: site
 
 nav:
-  - Overview: overview.md
+  - Home: index.md
+  - overview: overview.md
   - ASDF for FITS users: asdf_fits.md
-  - Specification: specification/index.md
-  - Extensions:
-      - Overview: extensions/index.md
-      - ASDF Coordinates Schemas: extensions/asdf-coordinates-schemas.md
+  - specification: specification/index.md
+  - extensions:
+      - extensions/index.md
       - ASDF Transform Schemas: extensions/asdf-transform-schemas.md
+      - ASDF Coordinates Schemas: extensions/asdf-coordinates-schemas.md
       - ASDF WCS Schemas: extensions/asdf-wcs-schemas.md
-  - Applications:
-      - Overview: applications/index.md
-      - ASDF for Python: applications/asdf-python.md
-      - ASDF for C++: applications/asdf-cpp.md
-      - ASDF for Julia: applications/asdf-julia.md
-  - Tutorials: tutorials/index.md
-  - Community: community/index.md
+  - applications:
+      - applications/index.md
+      - python: applications/asdf-python.md
+      - c++: applications/asdf-cpp.md
+      - julia: applications/asdf-julia.md
+  - tutorials: tutorials/index.md
+  - community: community/index.md
 
 theme:
   name: material
