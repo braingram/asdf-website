@@ -1,0 +1,89 @@
+site_name: ASDF Documentation
+site_description: The ASDF Website
+site_url: https://www.asdf-format.org
+repo_url: https://github.com/asdf-format/asdf-website
+repo_name: asdf-format/asdf-website
+
+docs_dir: docs
+site_dir: site
+
+nav:
+  - Overview: overview.md
+  - ASDF for FITS users: asdf_fits.md
+  - Specification: specification/index.md
+  - Extensions:
+      - Overview: extensions/index.md
+      - ASDF Coordinates Schemas: extensions/asdf-coordinates-schemas.md
+      - ASDF Transform Schemas: extensions/asdf-transform-schemas.md
+      - ASDF WCS Schemas: extensions/asdf-wcs-schemas.md
+  - Applications:
+      - Overview: applications/index.md
+      - ASDF for Python: applications/asdf-python.md
+      - ASDF for C++: applications/asdf-cpp.md
+      - ASDF for Julia: applications/asdf-julia.md
+  - Tutorials: tutorials/index.md
+  - Community: community/index.md
+
+theme:
+  name: material
+  custom_dir: overrides
+  favicon: assets/images/favicon.ico
+  logo: assets/images/logo-light-mode.png
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+  - macros
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra:
+  announcement_links:
+    - text: ASDF Projects
+      link: https://www.asdf-format.org
+    - text: Tutorials
+      link: https://www.asdf-format.org/en/latest/tutorials/index.html
+    - text: Community
+      link: https://www.asdf-format.org/en/latest/community/index.html
+  external_refs:
+    asdf-standard: https://www.asdf-format.org/projects/asdf-standard/en/latest/
+    asdf: https://www.asdf-format.org/projects/asdf/en/stable/
+    asdf-coordinates-schemas: https://www.asdf-format.org/projects/asdf-coordinates-schemas/en/latest/
+    asdf-transform-schemas: https://www.asdf-format.org/projects/asdf-transform-schemas/en/latest/
+    asdf-wcs-schemas: https://www.asdf-format.org/projects/asdf-wcs-schemas/en/latest/
+    astropy: https://docs.astropy.org/en/stable/
+    asdf-astropy: https://asdf-astropy.readthedocs.io/en/latest/
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/extra.js

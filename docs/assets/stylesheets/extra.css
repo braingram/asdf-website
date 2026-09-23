@@ -1,0 +1,170 @@
+.md-banner__inner {
+  text-align: center;
+}
+
+.md-banner__inner a {
+  margin-right: 1rem;
+}
+
+.md-banner__inner a:hover {
+  color: fuchsia;
+}
+
+.md-header__button.md-logo img,
+.md-nav__button.md-logo img {
+  height: 2rem;
+}
+
+.asdf-home {
+  margin: -1.2rem -0.8rem 0;
+}
+
+.asdf-hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: #000;
+  background:
+    url("../images/mountain-foreground.svg") bottom center / cover no-repeat,
+    url("../images/night-sky.svg") center / cover no-repeat;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asdf-hero::before,
+.asdf-hero::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180rem;
+  height: 180rem;
+  margin-top: -90rem;
+  margin-left: -90rem;
+  background: url("../images/star-hemispheres.svg") top center / 100% auto repeat-x;
+  opacity: 0.5;
+  animation: asdf-rotate 130s linear infinite;
+}
+
+.asdf-hero::after {
+  animation-direction: reverse;
+}
+
+@keyframes asdf-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.asdf-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 60rem;
+  padding: 8rem 1.5rem 10rem;
+}
+
+.asdf-hero-logo {
+  display: block;
+  margin: 0 auto 1.5rem;
+  width: min(26rem, 80vw);
+}
+
+.asdf-hero h1 {
+  margin-bottom: 0.5rem;
+}
+
+.asdf-hero p.lead {
+  font-size: 1.2rem;
+  margin: 0 auto 1.5rem;
+}
+
+.asdf-button-row {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.asdf-button,
+.asdf-button:visited {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.3rem;
+  border: 1px solid #11c192;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.asdf-button-primary,
+.asdf-button-primary:visited {
+  color: #fff;
+  background-color: #00a87b;
+}
+
+.asdf-button-primary:hover {
+  color: #000;
+  background-color: transparent;
+}
+
+.asdf-button-secondary,
+.asdf-button-secondary:visited {
+  color: #31373e;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.asdf-home-section {
+  margin: 3rem auto;
+  max-width: 76rem;
+  padding: 0 1rem;
+}
+
+.asdf-link-groups,
+.asdf-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.asdf-card {
+  height: 100%;
+}
+
+.asdf-card h2,
+.asdf-card h3 {
+  margin-top: 0;
+}
+
+.asdf-icon {
+  font-size: 2rem;
+  color: fuchsia;
+}
+
+.asdf-home-footer {
+  margin: 4rem auto 2rem;
+  max-width: 76rem;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .asdf-link-groups,
+  .asdf-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .asdf-home {
+    margin-top: 0;
+  }
+
+  .asdf-hero {
+    min-height: auto;
+  }
+
+  .asdf-hero-inner {
+    padding: 6rem 1rem 8rem;
+  }
+}

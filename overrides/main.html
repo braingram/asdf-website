@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block announce %}
+  {% if config.extra.announcement_links %}
+    {% for item in config.extra.announcement_links %}
+      <a href="{{ item.link }}">{{ item.text }}</a>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

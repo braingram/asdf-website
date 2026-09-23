@@ -9,10 +9,8 @@ build:
   apt_packages:
     - "graphviz"
 
-sphinx:
-    configuration: asdf_website/conf.py
-    builder: html
-    fail_on_warning: false
+mkdocs:
+  configuration: mkdocs.yml
 
 
 python:

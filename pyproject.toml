@@ -17,5 +17,9 @@ dependencies = [
     'sphinx-copybutton',
     'sphinx-tabs',
     'furo',
+    'mkdocs',
+    'mkdocs-material',
+    'mkdocs-macros-plugin',
+    'pymdown-extensions',
     'tomli',
 ]
