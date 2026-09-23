@@ -6,8 +6,10 @@
     {%- set li_classes = ['toctree-l' ~ level] %}
     {%- if has_children %}{% set _ = li_classes.append('has-children') %}{% endif %}
     {%- if item.active %}{% set _ = li_classes.append('current') %}{% endif %}
+    {%- set item_url = item.url %}
+    {%- if has_children and (item_url == '.' or item_url == './' or not item_url) %}{% set item_url = item.children[0].url %}{% endif %}
     {%- if item.active and page.url == item.url %}{% set _ = li_classes.append('current-page') %}{% endif %}
-<li class="{{ li_classes | join(' ') }}">{%- if item.active and page.url == item.url -%}<a class="current reference internal" href="#">{{ item.title }}</a>{%- else -%}<a class="reference internal" href="{{ item.url | url }}">{{ item.title }}</a>{%- endif -%}{% if has_children %}<input aria-label="Toggle navigation of {{ item.title }}" class="toctree-checkbox" id="toctree-checkbox-{{ level }}-{{ loop.index }}" name="toctree-checkbox-{{ level }}-{{ loop.index }}" role="switch" type="checkbox" {% if item.active %}checked=""{% endif %}/><label for="toctree-checkbox-{{ level }}-{{ loop.index }}"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label>{{ render_nav(item.children, level + 1) }}{% endif %}</li>
+<li class="{{ li_classes | join(' ') }}">{%- if item.active and page.url == item.url -%}<a class="current reference internal" href="#">{{ item.title }}</a>{%- else -%}<a class="reference internal" href="{{ item_url | url }}">{{ item.title }}</a>{%- endif -%}{% if has_children %}<input aria-label="Toggle navigation of {{ item.title }}" class="toctree-checkbox" id="toctree-checkbox-{{ level }}-{{ loop.index }}" name="toctree-checkbox-{{ level }}-{{ loop.index }}" role="switch" type="checkbox" {% if item.active %}checked=""{% endif %}/><label for="toctree-checkbox-{{ level }}-{{ loop.index }}"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label>{{ render_nav(item.children, level + 1) }}{% endif %}</li>
   {%- endif %}
 {%- endfor %}
 </ul>
