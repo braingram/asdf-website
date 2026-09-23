@@ -1,10 +1,10 @@
 # MkDocs migration cleanup prep
 
-This file captures the next validation and cleanup steps for the Sphinx → MkDocs migration.
+Cleanup pass status: completed for the legacy Sphinx source/configuration. `old_site/` is intentionally retained.
 
 ## Validation workflow
 
-Run these in order once Python and MkDocs are available:
+Run these in order when validating future changes:
 
 1. Repository-side checks that do not require Python:
    - `make validate-mkdocs-content`
@@ -30,27 +30,19 @@ Run these in order once Python and MkDocs are available:
 - home-page asset references exist
 - configured theme override directories exist
 
-## Likely cleanup candidates after validation passes
+## Cleanup result
 
-See also:
+Completed in the cleanup pass:
 
-- `LEGACY_SPHINX_INVENTORY.md`
+- removed legacy Sphinx dependencies from `pyproject.toml`
+- removed Sphinx-specific targets from `Makefile`
+- removed the legacy `asdf_website/` source tree
+- retained `old_site/` as the accepted comparison baseline snapshot
 
-Do not remove these until the MkDocs site is reviewed and accepted:
-
-- `asdf_website/conf.py`
-- `asdf_website/_templates/index.html`
-- Sphinx-only dependencies in `pyproject.toml`
-- Sphinx-oriented targets in `Makefile`
-- Sphinx build artifacts no longer needed once `old_site/` remains the accepted baseline reference
-
-## Acceptance checklist before Sphinx cleanup
+## Ongoing acceptance checklist
 
 - MkDocs builds successfully in strict mode
-- Read the Docs builds successfully with MkDocs
-- key pages visually reviewed against `old_site/html/`
-- internal links reviewed
-- external symbolic references reviewed
-- home page links reviewed
-- no remaining required content in `asdf_website/*.rst`
-- maintainers agree the MkDocs site is the new source of truth
+- key pages remain visually acceptable against `old_site/html/`
+- internal links remain valid
+- external symbolic references remain valid
+- home page links remain valid

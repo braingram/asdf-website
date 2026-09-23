@@ -1,25 +1,29 @@
-.md-banner__inner {
-  text-align: center;
+/* Keep docs pages as close as possible to legacy Furo output.
+   Only add styles for the custom MkDocs homepage and small compatibility tweaks. */
+
+main#furo-main-content {
+  display: block;
 }
 
-.md-banner__inner a {
-  margin-right: 1rem;
+body.homepage {
+  margin: 0;
 }
 
-.md-banner__inner a:hover {
-  color: fuchsia;
+body.homepage main#furo-main-content {
+  display: block;
 }
 
-.md-header__button.md-logo img,
-.md-nav__button.md-logo img {
-  height: 2rem;
+body.homepage .announcement {
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.asdf-home {
-  margin: -1.2rem -0.8rem 0;
+body.homepage .asdf-home {
+  margin: 0;
 }
 
-.asdf-hero {
+body.homepage .asdf-hero {
   position: relative;
   overflow: hidden;
   text-align: center;
@@ -33,8 +37,8 @@
   justify-content: center;
 }
 
-.asdf-hero::before,
-.asdf-hero::after {
+body.homepage .asdf-hero::before,
+body.homepage .asdf-hero::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -48,7 +52,7 @@
   animation: asdf-rotate 130s linear infinite;
 }
 
-.asdf-hero::after {
+body.homepage .asdf-hero::after {
   animation-direction: reverse;
 }
 
@@ -57,37 +61,39 @@
   to { transform: rotate(360deg); }
 }
 
-.asdf-hero-inner {
+body.homepage .asdf-hero-inner {
   position: relative;
   z-index: 1;
   max-width: 60rem;
   padding: 8rem 1.5rem 10rem;
 }
 
-.asdf-hero-logo {
+body.homepage .asdf-hero-logo {
   display: block;
   margin: 0 auto 1.5rem;
   width: min(26rem, 80vw);
 }
 
-.asdf-hero h1 {
+body.homepage .asdf-hero h1 {
+  color: #000;
   margin-bottom: 0.5rem;
 }
 
-.asdf-hero p.lead {
+body.homepage .asdf-hero p.lead {
+  color: #111;
   font-size: 1.2rem;
   margin: 0 auto 1.5rem;
 }
 
-.asdf-button-row {
+body.homepage .asdf-button-row {
   display: flex;
   gap: 0.75rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.asdf-button,
-.asdf-button:visited {
+body.homepage .asdf-button,
+body.homepage .asdf-button:visited {
   display: inline-block;
   padding: 0.8rem 1.2rem;
   border-radius: 0.3rem;
@@ -96,51 +102,51 @@
   font-weight: 600;
 }
 
-.asdf-button-primary,
-.asdf-button-primary:visited {
+body.homepage .asdf-button-primary,
+body.homepage .asdf-button-primary:visited {
   color: #fff;
   background-color: #00a87b;
 }
 
-.asdf-button-primary:hover {
+body.homepage .asdf-button-primary:hover {
   color: #000;
   background-color: transparent;
 }
 
-.asdf-button-secondary,
-.asdf-button-secondary:visited {
+body.homepage .asdf-button-secondary,
+body.homepage .asdf-button-secondary:visited {
   color: #31373e;
   background-color: rgba(255, 255, 255, 0.75);
 }
 
-.asdf-home-section {
+body.homepage .asdf-home-section {
   margin: 3rem auto;
   max-width: 76rem;
   padding: 0 1rem;
 }
 
-.asdf-link-groups,
-.asdf-feature-grid {
+body.homepage .asdf-link-groups,
+body.homepage .asdf-feature-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.asdf-card {
+body.homepage .asdf-card {
   height: 100%;
 }
 
-.asdf-card h2,
-.asdf-card h3 {
+body.homepage .asdf-card h2,
+body.homepage .asdf-card h3 {
   margin-top: 0;
 }
 
-.asdf-icon {
+body.homepage .asdf-icon {
   font-size: 2rem;
   color: fuchsia;
 }
 
-.asdf-home-footer {
+body.homepage .asdf-home-footer {
   margin: 4rem auto 2rem;
   max-width: 76rem;
   padding: 0 1rem;
@@ -151,20 +157,16 @@
 }
 
 @media (max-width: 900px) {
-  .asdf-link-groups,
-  .asdf-feature-grid {
+  body.homepage .asdf-link-groups,
+  body.homepage .asdf-feature-grid {
     grid-template-columns: 1fr;
   }
 
-  .asdf-home {
-    margin-top: 0;
-  }
-
-  .asdf-hero {
+  body.homepage .asdf-hero {
     min-height: auto;
   }
 
-  .asdf-hero-inner {
+  body.homepage .asdf-hero-inner {
     padding: 6rem 1rem 8rem;
   }
 }

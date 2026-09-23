@@ -1,61 +1,29 @@
 # Legacy Sphinx inventory
 
-This file records the legacy Sphinx-era files that remain in the repository while the MkDocs migration is finalized.
+This file records what remains from the Sphinx-era site after cleanup.
 
-## Legacy source tree still present
+## Retained legacy artifact
 
-These files remain as migration references and cleanup candidates:
+The retained legacy comparison artifact is:
 
-- `asdf_website/conf.py`
-- `asdf_website/_templates/index.html`
-- `asdf_website/index.rst`
-- `asdf_website/overview.rst`
-- `asdf_website/asdf_fits.rst`
-- `asdf_website/specification/index.rst`
-- `asdf_website/extensions/index.rst`
-- `asdf_website/extensions/asdf-coordinates-schemas.rst`
-- `asdf_website/extensions/asdf-transform-schemas.rst`
-- `asdf_website/extensions/asdf-wcs-schemas.rst`
-- `asdf_website/implementations/index.rst`
-- `asdf_website/implementations/asdf-python.rst`
-- `asdf_website/implementations/asdf-c.rst`
-- `asdf_website/implementations/asdf-cpp.rst`
-- `asdf_website/implementations/asdf-java.rst`
-- `asdf_website/implementations/asdf-julia.rst`
-- `asdf_website/tutorials/index.rst`
-- `asdf_website/community/index.rst`
+- `old_site/`
 
-## Legacy static assets still present
+This is kept as a reference snapshot for parity review and regression checking.
 
-Some assets have already been copied into `docs/assets/`, but the original Sphinx-side copies still remain:
+## Removed in cleanup
 
-- `asdf_website/_static/css/custom.css`
-- `asdf_website/_static/css/globalnav.css`
-- `asdf_website/_static/js/custom.js`
-- `asdf_website/_static/images/*`
+The cleanup pass removed:
 
-## Legacy build/config references still present
+- legacy Sphinx configuration
+- legacy Sphinx `.rst` source files
+- the legacy template override in `asdf_website/_templates/index.html`
+- legacy Sphinx-only dependencies from `pyproject.toml`
+- Sphinx-specific targets from `Makefile`
 
-These are likely cleanup candidates after final acceptance:
+## Current source of truth
 
-- Sphinx dependencies in `pyproject.toml`
-  - `sphinx`
-  - `sphinx-autobuild`
-  - `sphinx-copybutton`
-  - `sphinx-tabs`
-  - `furo`
-- Sphinx targets in `Makefile`
-  - `help`
-  - catch-all `%` Sphinx routing
-  - `livehtml`
-- legacy build directory ignore/use
-  - `build/`
+The MkDocs site is now the only active documentation source in this repository:
 
-## Keep for now
-
-Do not remove the above until all of the following are true:
-
-- MkDocs output is accepted as the source of truth
-- Read the Docs MkDocs build is confirmed
-- maintainers no longer need the Sphinx source for comparison
-- any missing styling/content parity issues are resolved
+- `docs/`
+- `mkdocs.yml`
+- `main.py`

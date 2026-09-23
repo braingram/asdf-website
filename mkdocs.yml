@@ -30,30 +30,10 @@ nav:
   - community: community/index.md
 
 theme:
-  name: material
+  name: mkdocs
   custom_dir: overrides
   favicon: assets/images/favicon.ico
   logo: assets/images/logo-light-mode.png
-  features:
-    - navigation.sections
-    - navigation.indexes
-    - navigation.top
-    - content.code.copy
-  palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: white
-      accent: teal
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      accent: teal
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
 
 plugins:
   - search
@@ -71,13 +51,6 @@ markdown_extensions:
       alternate_style: true
 
 extra:
-  announcement_links:
-    - text: ASDF Projects
-      link: https://www.asdf-format.org
-    - text: Tutorials
-      link: https://www.asdf-format.org/en/latest/tutorials/index.html
-    - text: Community
-      link: https://www.asdf-format.org/en/latest/community/index.html
   external_refs:
     asdf-standard: https://www.asdf-format.org/projects/asdf-standard/en/latest/
     asdf: https://www.asdf-format.org/projects/asdf/en/stable/
