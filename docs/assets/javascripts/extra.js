@@ -75,42 +75,75 @@ function buildPageToc() {
   tocIcons.forEach((el) => el.classList.remove("no-toc"));
 
   const root = document.createElement("ul");
-  let currentTopLi = null;
-  let currentSubUl = null;
+  let currentH1Li = null;
+  let currentH1Ul = null;
+  let currentH2Li = null;
+  let currentH2Ul = null;
 
-  headings.forEach((heading, index) => {
-    const href = index === 0 ? "#" : `#${heading.id}`;
+  const makeItem = (href, text) => {
     const a = document.createElement("a");
     a.className = "reference internal";
     a.href = href;
-    a.textContent = heading.textContent.trim();
+    a.textContent = text;
 
     const li = document.createElement("li");
     li.appendChild(a);
+    return li;
+  };
 
-    if (heading.tagName === "H1") {
-      currentTopLi = li;
-      currentSubUl = document.createElement("ul");
-      currentTopLi.appendChild(currentSubUl);
-      root.appendChild(currentTopLi);
+  headings.forEach((heading, index) => {
+    const level = Number(heading.tagName.substring(1));
+    const href = index === 0 ? "#" : `#${heading.id}`;
+    const li = makeItem(href, heading.textContent.trim());
+
+    if (level === 1) {
+      currentH1Li = li;
+      currentH1Ul = document.createElement("ul");
+      currentH1Li.appendChild(currentH1Ul);
+      root.appendChild(currentH1Li);
+      currentH2Li = null;
+      currentH2Ul = null;
       return;
     }
 
-    if (!currentTopLi) {
-      currentTopLi = document.createElement("li");
-      const topA = document.createElement("a");
-      topA.className = "reference internal";
-      topA.href = "#";
-      topA.textContent = document.title.replace(/\s+-\s+.*$/, "");
-      currentTopLi.appendChild(topA);
-      currentSubUl = document.createElement("ul");
-      currentTopLi.appendChild(currentSubUl);
-      root.appendChild(currentTopLi);
+    if (!currentH1Li) {
+      currentH1Li = makeItem("#", document.title.replace(/\s+-\s+.*$/, ""));
+      currentH1Ul = document.createElement("ul");
+      currentH1Li.appendChild(currentH1Ul);
+      root.appendChild(currentH1Li);
     }
 
-    currentSubUl.appendChild(li);
+    if (level === 2) {
+      currentH2Li = li;
+      currentH2Ul = document.createElement("ul");
+      currentH2Li.appendChild(currentH2Ul);
+      currentH1Ul.appendChild(currentH2Li);
+      return;
+    }
+
+    if (level === 3) {
+      if (!currentH2Li) {
+        currentH2Li = makeItem("#", currentH1Li.querySelector("a").textContent);
+        currentH2Ul = document.createElement("ul");
+        currentH2Li.appendChild(currentH2Ul);
+        currentH1Ul.appendChild(currentH2Li);
+      }
+      currentH2Ul.appendChild(li);
+      return;
+    }
+
+    currentH1Ul.appendChild(li);
   });
 
+  const pruneEmptyLists = (node) => {
+    Array.from(node.querySelectorAll("ul")).forEach((ul) => {
+      if (ul.children.length === 0) {
+        ul.remove();
+      }
+    });
+  };
+
+  pruneEmptyLists(root);
   tocContainer.replaceChildren(root);
 }
 
