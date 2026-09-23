@@ -19,11 +19,13 @@ nav:
       - ASDF Transform Schemas: extensions/asdf-transform-schemas.md
       - ASDF Coordinates Schemas: extensions/asdf-coordinates-schemas.md
       - ASDF WCS Schemas: extensions/asdf-wcs-schemas.md
-  - applications:
-      - applications/index.md
-      - python: applications/asdf-python.md
-      - c++: applications/asdf-cpp.md
-      - julia: applications/asdf-julia.md
+  - implementations:
+      - implementations/index.md
+      - Python: implementations/asdf-python.md
+      - C: implementations/asdf-c.md
+      - C++: implementations/asdf-cpp.md
+      - Java: implementations/asdf-java.md
+      - Julia: implementations/asdf-julia.md
   - tutorials: tutorials/index.md
   - community: community/index.md
 

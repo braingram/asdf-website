@@ -11,7 +11,7 @@ Pages inspected from the legacy site:
 - `old_site/html/asdf_fits.html`
 - `old_site/html/specification/index.html`
 - `old_site/html/extensions/index.html`
-- `old_site/html/applications/index.html`
+- `old_site/html/implementations/index.html`
 - `old_site/html/tutorials/index.html`
 - `old_site/html/community/index.html`
 
@@ -27,15 +27,15 @@ Pages inspected from the legacy site:
   - ASDF Transform Schemas
   - ASDF Coordinates Schemas
   - ASDF WCS Schemas
-- applications index page now includes the language links shown in the legacy site
+- implementations index page now includes the language links shown in the legacy site and the new C/Java content from Sphinx
 - sidebar label intent has been brought closer to legacy Sphinx labels:
   - `overview`
   - `specification`
   - `extensions`
-  - `applications`
+  - `implementations`
   - `tutorials`
   - `community`
-  - application children `python`, `c++`, `julia`
+  - implementation children `Python`, `C`, `C++`, `Java`, `Julia`
 
 ## Differences still expected or still needing visual review
 
@@ -81,7 +81,7 @@ Impact:
 ### 4) Section-index behavior should be checked in a browser
 The nav has been adjusted to more closely reflect the legacy sidebar by using section pages for:
 - `extensions/index.md`
-- `applications/index.md`
+- `implementations/index.md`
 
 This should be checked in the built MkDocs UI to confirm:
 - the section title links behave correctly
@@ -95,7 +95,7 @@ In a browser, compare the MkDocs build against `old_site/html/` for:
 2. top announcement links
 3. home page hero, CTA buttons, and feature cards
 4. extensions section ordering
-5. applications section ordering and labels
+5. implementations section ordering and labels
 6. content headings on:
    - Overview
    - ASDF for FITS users

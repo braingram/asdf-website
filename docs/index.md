@@ -23,18 +23,20 @@ hide:
         <h3>Docs</h3>
         <ul>
           <li><a href="specification/index.html">ASDF Specification</a></li>
-          <li><a href="applications/asdf-python.html">asdf (Python)</a></li>
-          <li><a href="applications/asdf-cpp.html">asdf (C++)</a></li>
-          <li><a href="applications/asdf-julia.html">asdf (Julia)</a></li>
-          <li><a href="extensions/asdf-coordinates-schemas.html">Coordinates Schemas</a></li>
+          <li><a href="implementations/asdf-python.html">asdf (Python)</a></li>
+          <li><a href="implementations/asdf-c.html">libasdf (C)</a></li>
+          <li><a href="implementations/asdf-cpp.html">asdf (C++)</a></li>
+          <li><a href="implementations/asdf-java.html">asdf (Java)</a></li>
+          <li><a href="implementations/asdf-julia.html">asdf (Julia)</a></li>
           <li><a href="extensions/asdf-transform-schemas.html">Transform Schemas</a></li>
+          <li><a href="extensions/asdf-coordinates-schemas.html">Coordinates Schemas</a></li>
           <li><a href="extensions/asdf-wcs-schemas.html">WCS Schemas</a></li>
         </ul>
       </div>
       <div class="md-typeset asdf-card">
         <h3>Get Started</h3>
         <ul>
-          <li><a href="applications/index.html">Installation</a></li>
+          <li><a href="implementations/index.html">Installation</a></li>
           <li><a href="tutorials/index.html">Tutorials</a></li>
           <li><a href="extensions/index.html">Extensions</a></li>
         </ul>
@@ -63,8 +65,8 @@ hide:
       <div class="md-typeset asdf-card">
         <p class="asdf-icon">&lt;/&gt;</p>
         <h2>Applications</h2>
-        <p>Ready to start using ASDF with your data? Install <strong>asdf</strong> for Python, C++ or Julia to get started right away.</p>
-        <p><a class="asdf-button asdf-button-primary" href="applications/index.html">Start coding »</a></p>
+        <p>Ready to start using ASDF with your data? Install <strong>asdf</strong> for Python, C, C++, Java, or Julia to get started right away.</p>
+        <p><a class="asdf-button asdf-button-primary" href="implementations/index.html">Start coding »</a></p>
       </div>
       <div class="md-typeset asdf-card">
         <p class="asdf-icon">⚗</p>

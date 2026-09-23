@@ -53,13 +53,15 @@ In addition to the core schemas defined by the ASDF Specification, there are sev
 - [coordinates](extensions/asdf-coordinates-schemas.md)
 - [wcs](extensions/asdf-wcs-schemas.md)
 
-## Applications
+## Implementations
 
-The ASDF specification is being developed concurrently with a reference implementation written in Python. There are two prototype implementations for C++ and Julia. Neither is currently feature-complete but provide enough functionality to read and write ASDF files.
+The ASDF specification is developed concurrently with a reference implementation written in Python. ASDF support in other languages is handled by different "implementations" of the ASDF specification.
 
-- [python](applications/asdf-python.md)
-- [C++](applications/asdf-cpp.md)
-- [Julia](applications/asdf-julia.md)
+- [Python](implementations/asdf-python.md)
+- [C](implementations/asdf-c.md)
+- [C++](implementations/asdf-cpp.md)
+- [Java](implementations/asdf-java.md)
+- [Julia](implementations/asdf-julia.md)
 
 ## Tutorials/Workshops
 

@@ -16,10 +16,12 @@ These files remain as migration references and cleanup candidates:
 - `asdf_website/extensions/asdf-coordinates-schemas.rst`
 - `asdf_website/extensions/asdf-transform-schemas.rst`
 - `asdf_website/extensions/asdf-wcs-schemas.rst`
-- `asdf_website/applications/index.rst`
-- `asdf_website/applications/asdf-python.rst`
-- `asdf_website/applications/asdf-cpp.rst`
-- `asdf_website/applications/asdf-julia.rst`
+- `asdf_website/implementations/index.rst`
+- `asdf_website/implementations/asdf-python.rst`
+- `asdf_website/implementations/asdf-c.rst`
+- `asdf_website/implementations/asdf-cpp.rst`
+- `asdf_website/implementations/asdf-java.rst`
+- `asdf_website/implementations/asdf-julia.rst`
 - `asdf_website/tutorials/index.rst`
 - `asdf_website/community/index.rst`
 

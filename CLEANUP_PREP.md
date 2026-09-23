@@ -16,7 +16,7 @@ Run these in order once Python and MkDocs are available:
    - home page
    - overview page
    - extensions pages
-   - applications pages
+   - implementations pages
    - community page
    - announcement bar links
    - logo/light-dark behavior
